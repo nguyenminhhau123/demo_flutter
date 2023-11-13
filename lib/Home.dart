@@ -37,30 +37,30 @@ class _HomeState extends State<Home> {
             padding: const EdgeInsets.all(20),
             child: Column(
               children: [
-                Text(firstname + ' ' + lastname),
-                Text(mobile),
-                Text(email),
+                SizedBox(
+                  height: 20,
+                ),
                 Container(
                   // alignment: Alignment.topLeft,
-                  child: GestureDetector(
-                    onTap: () {
-                      Navigator.push(context,
-                          MaterialPageRoute(builder: (context) => Login()));
-                    },
-                    child: Container(
-                      width: 200,
-                      height: 50,
-                      alignment: Alignment.center,
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(20),
-                        color: Colors.greenAccent,
-                      ),
-                      child: Text('Logout'),
-                    ),
+                  child: Text(
+                    'Welcome,' + firstname + ' ' + lastname,
+                    style: TextStyle(fontSize: 24, color: Colors.green),
                   ),
                 ),
                 SizedBox(
-                  height: 20,
+                  height: 30,
+                ),
+                Container(
+                  child: OutlinedButton.icon(
+                      onPressed: () {},
+                      icon: Icon(Icons.phone),
+                      label: Text(mobile)),
+                ),
+                Container(
+                  child: OutlinedButton.icon(
+                      onPressed: () {},
+                      icon: Icon(Icons.email),
+                      label: Text(email)),
                 ),
                 Container(
                   child: OutlinedButton.icon(
@@ -73,16 +73,6 @@ class _HomeState extends State<Home> {
                       label: Text('Logout')),
                 ),
                 SizedBox(height: 20),
-                Container(
-                  // alignment: Alignment.topLeft,
-                  child: Text(
-                    'Welcome back, Guys',
-                    style: TextStyle(fontSize: 24, color: Colors.green),
-                  ),
-                ),
-                SizedBox(
-                  height: 30,
-                ),
               ],
             ),
           ),
